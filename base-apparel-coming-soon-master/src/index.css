@@ -1,0 +1,171 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+/* Colors */
+
+:root {
+  /*  Primary  */
+  --Desaturated_Red: hsl(0, 36%, 70%);
+  --Soft_Red: hsl(0, 93%, 68%);
+
+  /* Neutral  */
+  --Dark_Grayish_Red: hsl(0, 6%, 24%);
+}
+
+
+/* General Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+
+/* Styling */
+
+.App {
+  width: 70%;
+  margin: 4rem auto;
+  display: flex;
+}
+
+.content {
+  width: 60%;
+  background-image: url(/images/bg-pattern-desktop.svg) !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3rem 0rem 0rem 6rem;
+  background-image: linear-gradient(135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%));
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.logo>img {
+  width: 8.5rem;
+}
+
+.hero-img {
+  width: 40%;
+}
+
+.text-section>h1 {
+  font-size: 3.5rem;
+  letter-spacing: 0.7rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.text-section>h1>span {
+  color: var(--Desaturated_Red);
+  font-weight: 300;
+  display: block;
+}
+
+.text-section>p {
+  font-size: 0.8rem;
+  color: var(--Desaturated_Red);
+  width: 40ch;
+  line-height: 1.4rem;
+}
+
+.form-field {
+  width: 70%;
+  /* margin: 0rem auto; */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+form {
+  display: flex;
+  border: 1px solid var(--Dark_Grayish_Red);
+  border-radius: 2rem;
+}
+
+.input-field {
+  width: 70%;
+  position: relative;
+  height: 2.5rem;
+  margin-left: 5px;
+  width: 100%;
+}
+
+#email {
+  width: 90%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding-left: 2rem;
+  border-radius: 2rem;
+}
+
+#email::placeholder {
+  font-weight: 500;
+  color: var(--Desaturated_Red);
+}
+
+.wrong {
+  position: absolute;
+  right: 5;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: wrong-animation 1s ease-in-out forwards;
+}
+
+button {
+  width: 25%;
+  height: calc(2.5rem + 4px);
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(135deg,
+      hsl(0, 80%, 86%),
+      hsl(0, 74%, 74%));
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+.form-field>p{
+  margin-left: 2rem;
+  color: var(--Desaturated_Red);
+  font-weight: 600;
+  font-size: 0.8rem;
+  animation: p-animation 1s ease-in-out forwards ;
+}
+
+@keyframes p-animation {
+  0%{
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  70%,100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wrong-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+
+  70%,
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(-40%);
+  }
+}
